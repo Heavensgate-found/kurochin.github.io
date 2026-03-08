@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Minecraft Models</title>
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+margin:0;
+background:linear-gradient(-45deg,#0b1220,#020617,#0f172a,#020617);
+background-size:400% 400%;
+animation:bgmove 12s ease infinite;
+color:white;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+padding:60px 20px;
+text-align:center;
+background:#020617;
+}
+
+header h1{
+margin:0;
+font-size:42px;
+}
+
+.back-btn{
+display:inline-block;
+margin-top:20px;
+background:linear-gradient(135deg,#38bdf8,#22c55e);
+color:#020617;
+padding:12px 22px;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+}
+
+.section{
+padding:60px 40px;
+}
+
+.section h2{
+margin-bottom:25px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+gap:24px;
+margin-bottom:60px;
+}
+
+.card{
+background:#020617;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+transition:all .25s ease;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.05);
+box-shadow:0 0 25px rgba(56,189,248,0.6);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:contain;
+background:#0f172a;
+}
+
+.card p{
+padding:12px;
+color:#cbd5f5;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:1000;
+}
+
+.lightbox img{
+max-width:95%;
+max-height:95%;
+}
+
+/* HIRE SECTION */
+
+.hire-section{
+text-align:center;
+padding:80px 20px;
+background:#020617;
+}
+
+.hire-btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 30px;
+background:linear-gradient(135deg,#38bdf8,#22c55e);
+border-radius:10px;
+color:#020617;
+font-weight:bold;
+text-decoration:none;
+font-size:18px;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+font-size:14px;
+color:#94a3b8;
+}
+
+.footer a{
+color:#38bdf8;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Minecraft Models</h1>
+
+<a href="index.html" class="back-btn">
+⬅ Back to Portfolio
+</a>
+
+</header>
+
+<section class="section">
+
+<h2>Characters</h2>
+<div class="gallery" id="characters"></div>
+
+<h2>Creatures</h2>
+<div class="gallery" id="creatures"></div>
+
+<h2>Weapons</h2>
+<div class="gallery" id="weapons"></div>
+
+</section>
+
+<div class="hire-section">
+
+<h2>Need Custom Minecraft Models?</h2>
+
+<p>I create custom characters, weapons, creatures and assets for servers and mods.</p>
+
+<a href="mailto:youremail@email.com" class="hire-btn">
+Hire Me
+</a>
+
+</div>
+
+<div class="footer">
+
+<a href="tos.html">Terms of Service</a>
+
+</div>
+
+<div class="lightbox" id="viewer">
+<img id="viewer-img">
+</div>
+
+<script>
+
+/* CARD CREATOR */
+
+function createCard(src,title){
+
+let card=document.createElement("div")
+card.className="card"
+
+let img=document.createElement("img")
+img.src=src
+
+let label=document.createElement("p")
+label.textContent=title
+
+card.appendChild(img)
+card.appendChild(label)
+
+img.onclick=()=>{
+viewer.style.display="flex"
+viewerImg.src=src
+}
+
+return card
+}
+
+let characters=document.getElementById("characters")
+let creatures=document.getElementById("creatures")
+let weapons=document.getElementById("weapons")
+
+let viewer=document.getElementById("viewer")
+let viewerImg=document.getElementById("viewer-img")
+
+viewer.onclick=()=>{
+viewer.style.display="none"
+}
+
+/* AUTO LOAD MODELS */
+
+for(let i=1;i<=20;i++){
+
+let c=`assets/character_${i}.png`
+let img=new Image()
+
+img.onload=()=>{
+characters.appendChild(createCard(c,"Character Model"))
+}
+
+img.src=c
+}
+
+for(let i=1;i<=20;i++){
+
+let c=`assets/creature_${i}.png`
+let img=new Image()
+
+img.onload=()=>{
+creatures.appendChild(createCard(c,"Creature Model"))
+}
+
+img.src=c
+}
+
+for(let i=1;i<=20;i++){
+
+let c=`assets/weapon_${i}.png`
+let img=new Image()
+
+img.onload=()=>{
+weapons.appendChild(createCard(c,"Weapon Model"))
+}
+
+img.src=c
+}
+
+/* SCROLL REVEAL */
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity=1
+entry.target.style.transform="translateY(0)"
+}
+})
+})
+
+setTimeout(()=>{
+
+const cards=document.querySelectorAll(".card")
+
+cards.forEach(card=>{
+card.style.opacity=0
+card.style.transform="translateY(40px)"
+card.style.transition="all .6s ease"
+observer.observe(card)
+})
+
+},1000)
+
+</script>
+
+</body>
+</html>

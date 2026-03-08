@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kuro Chin Builds & Models</title>
+
+<style>
+
+/* GENERAL */
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+margin:0;
+background:linear-gradient(-45deg,#0f172a,#020617,#0f172a,#020617);
+background-size:400% 400%;
+animation:bgmove 15s ease infinite;
+color:#fff;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+
+header{
+padding:60px 20px;
+text-align:center;
+background:#020617;
+}
+
+header h1{
+margin:0;
+font-size:42px;
+letter-spacing:1px;
+}
+
+header p{
+color:#94a3b8;
+margin-top:10px;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#38bdf8;
+text-decoration:none;
+font-weight:bold;
+transition:.2s;
+}
+
+nav a:hover{
+color:#22c55e;
+}
+
+/* SECTIONS */
+
+.section{
+padding:60px 40px;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:30px;
+font-size:32px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.card{
+background:#020617;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+transition:all .3s ease;
+cursor:pointer;
+opacity:0;
+transform:translateY(40px);
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.05);
+box-shadow:0 0 25px rgba(56,189,248,.6);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card p{
+padding:12px;
+color:#cbd5f5;
+font-size:14px;
+}
+
+/* CONTACT */
+
+.contact-section{
+text-align:center;
+padding:90px 20px;
+background:#020617;
+}
+
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.hire-btn{
+padding:15px 32px;
+background:linear-gradient(135deg,#38bdf8,#22c55e);
+border-radius:10px;
+color:#020617;
+font-weight:bold;
+text-decoration:none;
+}
+
+.contact-btn{
+padding:15px 32px;
+background:#111827;
+border-radius:10px;
+color:#38bdf8;
+text-decoration:none;
+font-weight:bold;
+}
+
+.models-btn{
+padding:15px 32px;
+background:#111827;
+border-radius:10px;
+color:#22c55e;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+color:#64748b;
+border-top:1px solid #1e293b;
+}
+
+/* IMAGE VIEWER */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:1000;
+}
+
+.lightbox img{
+max-width:95%;
+max-height:95%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Kuro Chin Builds & Models</h1>
+
+<p>Professional Minecraft Builds & Custom Models</p>
+
+<nav>
+<a href="#spawns">Spawns</a>
+<a href="#interiors">Interiors</a>
+<a href="#maps">Maps</a>
+<a href="#fantasy">Fantasy</a>
+<a href="models.html">Models</a>
+</nav>
+
+</header>
+
+<!-- SPAWNS -->
+
+<section id="spawns" class="section">
+<h2>Server Spawns</h2>
+
+<div class="gallery">
+
+<div class="card"><img src="assets/img1.jpg"><p>Large multiplayer spawn hub</p></div>
+<div class="card"><img src="assets/img2.jpg"><p>Fantasy server spawn</p></div>
+<div class="card"><img src="assets/img3.jpg"><p>Medieval spawn plaza</p></div>
+<div class="card"><img src="assets/img4.jpg"><p>Adventure map spawn area</p></div>
+<div class="card"><img src="assets/img5.jpg"><p>Detailed server entrance</p></div>
+<div class="card"><img src="assets/img6.jpg"><p>RPG themed spawn</p></div>
+
+</div>
+
+</section>
+
+<!-- INTERIORS -->
+
+<section id="interiors" class="section">
+
+<h2>Interior Builds</h2>
+
+<div class="gallery">
+
+<div class="card"><img src="assets/img7.jpg"><p>Tavern interior design</p></div>
+<div class="card"><img src="assets/img8.jpg"><p>Castle throne room</p></div>
+<div class="card"><img src="assets/img9.jpg"><p>Medieval bedroom</p></div>
+<div class="card"><img src="assets/img10.jpg"><p>Shop interior</p></div>
+<div class="card"><img src="assets/img11.jpg"><p>RPG guild hall</p></div>
+<div class="card"><img src="assets/img12.jpg"><p>Library build</p></div>
+
+</div>
+
+</section>
+
+<!-- MAP BUILDS -->
+
+<section id="maps" class="section">
+
+<h2>Custom Maps</h2>
+
+<div class="gallery">
+
+<div class="card"><img src="assets/img13.jpg"><p>Adventure map terrain</p></div>
+<div class="card"><img src="assets/img14.jpg"><p>Open world RPG map</p></div>
+<div class="card"><img src="assets/img15.jpg"><p>Medieval town map</p></div>
+<div class="card"><img src="assets/img16.jpg"><p>Fantasy island build</p></div>
+<div class="card"><img src="assets/img17.jpg"><p>Village landscape</p></div>
+<div class="card"><img src="assets/img18.jpg"><p>Large survival world</p></div>
+
+</div>
+
+</section>
+
+<!-- FANTASY BUILDS -->
+
+<section id="fantasy" class="section">
+
+<h2>Fantasy Builds</h2>
+
+<div class="gallery">
+
+<div class="card"><img src="assets/img19.jpg"><p>Wizard tower</p></div>
+<div class="card"><img src="assets/img20.jpg"><p>Fantasy castle</p></div>
+<div class="card"><img src="assets/img21.jpg"><p>Floating island build</p></div>
+<div class="card"><img src="assets/img22.jpg"><p>Magic academy</p></div>
+<div class="card"><img src="assets/img23.jpg"><p>Ancient temple</p></div>
+<div class="card"><img src="assets/img24.jpg"><p>Dragon mountain base</p></div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section">
+
+<h2>Work With Me</h2>
+
+<p>I create professional Minecraft builds and custom models for servers and projects.</p>
+
+<div class="contact-buttons">
+
+<a href="https://www.fiverr.com/s/YR287kp" class="hire-btn">Hire Me</a>
+
+<a href="https://discord.com/users/278201640849375242" class="contact-btn">Contact on Discord</a>
+
+<a href="models.html" class="models-btn">View Models</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>Commission Open • Contact via Discord</p>
+
+<p><a href="tos.html">Terms of Service</a></p>
+
+</footer>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="viewer">
+<img id="viewer-img">
+</div>
+
+<script>
+
+/* CLICK IMAGE TO FULLSCREEN */
+
+const images=document.querySelectorAll(".card img")
+const viewer=document.getElementById("viewer")
+const viewerImg=document.getElementById("viewer-img")
+
+images.forEach(img=>{
+img.onclick=()=>{
+viewer.style.display="flex"
+viewerImg.src=img.src
+}
+})
+
+viewer.onclick=()=>{
+viewer.style.display="none"
+}
+
+/* SCROLL ANIMATION */
+
+const cards=document.querySelectorAll(".card")
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity=1
+entry.target.style.transform="translateY(0)"
+}
+})
+})
+
+cards.forEach(card=>{
+observer.observe(card)
+})
+
+</script>
+
+</body>
+</html>
